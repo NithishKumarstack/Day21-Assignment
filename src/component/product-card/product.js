@@ -6,7 +6,7 @@ const Product = (props) => {
     return(
         <div className='box-cart'>
              {props.lists.map((list, index) => 
-                <Cart  list={list} cartItems={props.cartItems} addToCart={props.addToCart} key={index} />
+                <Cart  list={list} cartItems={props.cartItems} addToCart={props.addToCart} removeFromCart={props.removeFromCart} key={index} />
             )};
         </div>
     );

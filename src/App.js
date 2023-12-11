@@ -71,11 +71,14 @@ function App() {
     setCartItems((cart) => [...cart, newItem])
   }
 };
+const removeFromCart = (newItem) => {
+  setCartItems(cart => cart.filter(item => item.id !== newItem.id));
+};
   return (
     <div className="App">
-    <Head cartCount={cartItems.length}  />
+    <Head cartCount={cartItems.length}/>
     <Main />
-    <Product lists={LISTS} cartItems={cartItems} addToCart={addToCart} />
+    <Product lists={LISTS} cartItems={cartItems} addToCart={addToCart} removeFromCart={removeFromCart}/>
     <Footer />
     </div>
   );
